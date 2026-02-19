@@ -77,20 +77,24 @@ const PlacesToVisit = ({ trip }) => {
   }
 
   return (
-    <div>
-      <h2 className='font-bold text-lg mt-5'>Places To Visit</h2>
+    <div className="w-full">
+      <h2 className='font-bold text-lg sm:text-xl md:text-2xl mt-5'>Places To Visit</h2>
 
       <div>
         {trip.tripData.Itinerary.map((item, index) => (
           <div  key={index} className='mt-5'>
             <div className=''>
-            <h2 className='font-medium text-lg'>{item?.day}</h2>
-              <div className='grid md:grid-cols-2  gap-5'>
+            <h2 className='font-semibold text-base sm:text-lg md:text-xl mb-3'>{item?.day}</h2>
+              <div className='grid 
+                            grid-cols-1 
+                            sm:grid-cols-1 
+                            md:grid-cols-2 
+                            gap-4 md:gap-6'>
             {Array.isArray(item?.placesToVisit) &&
               item.placesToVisit.map((place, i) => (
                 <div className='my-1' key={i}>
                   
-                  <h2 className='font-medium text-sm text-orange-600'>
+                  <h2 className='font-medium text-xs sm:text-sm text-orange-600 mb-1'>
                     {place?.time}
                   </h2>
 

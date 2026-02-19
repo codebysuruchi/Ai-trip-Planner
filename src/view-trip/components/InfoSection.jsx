@@ -67,17 +67,17 @@ const InfoSection = ({ trip }) => {
     <div>
       <img
         src={locationImage || "/placeholder.jpg"}
-        className="h-[340px] w-full object-cover rounded-xl"
+        className="h-[220px] sm:h-[280px] md:h-[340px] w-full object-cover rounded-xl"
         alt="Trip Location"
       />
 
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
         <div className="my-5 flex flex-col gap-2">
-          <h2 className="font-bold text-2xl">
+          <h2 className="font-bold text-xl sm:text-2xl md:text-3xl">
             {trip?.userSelection?.location?.label}
           </h2>
 
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-3 md:gap-5">
             <h2 className="p-1 px-3 bg-gray-200 rounded-full text-gray-500 text-xs md:text-base">
               🗓️ {trip?.userSelection?.noOfDays} Days
             </h2>
@@ -92,7 +92,7 @@ const InfoSection = ({ trip }) => {
           </div>
         </div>
 
-        <Button className="bg-gray-200 p-3 rounded-full hover:bg-zinc-700 transition">
+        <Button className="bg-gray-200 p-3 rounded-full hover:bg-zinc-700 transition self-start md:self-auto">
           <CiShare2 className="text-white" />
         </Button>
       </div>
